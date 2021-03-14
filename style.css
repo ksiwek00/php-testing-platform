@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+* {
+  font-family: "Montserrat";
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+      to right top,
+      #8c6784,
+      #c97a8c,
+      #f8967f,
+      #ffc26d,
+      #f9f871
+    )
+    fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container-center {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+header {
+  display: block;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+#content {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#form-cont {
+  text-align: center;
+}
+input {
+  margin: 5px;
+}
+.error {
+  color: #ff0000 !important;
+}
+input[type="submit"] {
+  background-color: #575366;
+  border-radius: 25px;
+  height: 35px;
+  border: 1px solid #8c6784;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 5px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #8c6784;
+  transition: background-color 0.1s;
+}
+
+input[type="submit"]:hover {
+  background-color: #8c6784;
+}
+
+input[type="submit"]:active {
+  position: relative;
+  top: 1px;
+}
+
+.menu {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  min-height: 50px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  background-color: #5b2e48;
+  overflow: hidden;
+}
+
+.menu-button {
+  display: block;
+  width: auto;
+  height: 50px;
+  line-height: 40px;
+  padding: 5px;
+  box-sizing: border-box;
+  margin: 0 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  border-radius: 5px;
+  text-decoration: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 100px;
+}
+
+.menu-button.selected {
+  width: auto;
+  background-color: #8c6784;
+  height: 50px;
+  line-height: 40px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+#users,
+#stats {
+  flex-direction: row;
+  width: 100%;
+  display: none;
+}
+
+.menu-button:hover {
+  cursor: pointer;
+  background-color: #585563;
+}
+
+#questions {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: visible;
+  max-height: 100vh;
+}
+
+#questions .question {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#questions .question.qheader {
+  border-bottom: 1px solid black;
+}
+
+#question-edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 50px auto;
+}
+
+#question-edit label {
+  display: flex;
+  align-items: center;
+}
+
+#question-edit label textarea {
+  resize: none;
+  overflow: auto;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.question div {
+  padding: 5px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.question .id {
+  width: 2%;
+}
+
+.question .text {
+  width: 15%;
+}
+
+.question .anwser-a,
+.question .anwser-b,
+.question .anwser-c,
+.question .anwser-d {
+  width: 15%;
+}
+
+.question .right {
+  width: 8%;
+}
+
+.question .given,
+.question .correct,
+.question .edit {
+  width: 5%;
+}
+
+.question .edit {
+  min-width: 75px;
+}
+
+#questions .leftcol {
+  width: 50%;
+}
+#questions .rightcol {
+  width: 50%;
+}
+
+#users .leftcol {
+  width: 25%;
+  border-right: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: auto;
+  min-height: 250px;
+}
+
+#users .leftcol .user {
+  width: 100%;
+  height: 25px;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+}
+
+#users .leftcol .user:hover {
+  color: #696969;
+  cursor: pointer;
+}
+
+#users .rightcol {
+  width: 75%;
+  min-height: 250px;
+}
+
+#stats .menu-stats {
+  width: 20%;
+  border-right: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: auto;
+  min-height: 250px;
+}
+
+#stats .menu-stats .menu-button {
+  color: #000000;
+  margin: 0;
+  text-align: center;
+}
+
+#stats .rightcol .leftcol {
+  width: 25%;
+  border-right: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: auto;
+  min-height: 250px;
+  box-sizing: border-box;
+}
+
+#stats .rightcol .leftcol .user {
+  width: 100%;
+  height: 25px;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#stats .rightcol .leftcol .user:hover {
+  color: #696969;
+  cursor: pointer;
+}
+
+#stats .rightcol .rightcol {
+  width: 75%;
+  min-height: 250px;
+}
+
+#stats .rightcol .rightcol .user {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+#rankings-stats .data {
+  padding: 5px;
+}
+
+#stats .rightcol,
+#stats .rightcol #users-stats,
+#stats .rightcol #questions-stats,
+#stats .rightcol #rankings-stats {
+  width: 100%;
+  min-height: 250px;
+  display: flex;
+  flex-direction: row;
+}
+
+#stats .rightcol #users-stats,
+#stats .rightcol #rankings-stats {
+  display: none;
+}
+
+#stats .rightcol #rankings-stats .leftcol,
+#stats .rightcol #rankings-stats .rightcol {
+  width: 50%;
+  border-right: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: auto;
+  min-height: 250px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#profile {
+  text-align: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+#test {
+  text-align: center;
+  width: 100%;
+  flex-direction: column;
+  display: none;
+  align-items: center;
+}
+
+#test .menu-button {
+  width: 50%;
+  min-height: 50px;
+}
+
+#test #questions .question {
+  text-align: center;
+  padding: 5px;
+  width: 100%;
+  margin: 5px;
+  box-sizing: border-box;
+  display: block;
+}
+
+#stats-user {
+  text-align: center;
+  width: 100%;
+  flex-direction: column;
+  display: none;
+}
+
+#stats-user .data {
+  margin: 5px 0;
+}
+
+#test #questions {
+  width: 100%;
+  overflow: visible;
+}
+
+.longer {
+  min-height: 10px;
+  width: 100%;
+}
